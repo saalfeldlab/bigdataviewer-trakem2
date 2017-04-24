@@ -91,7 +91,8 @@ public class OpenTrakEM2ProjectPlugIn implements PlugIn
 				layerset,
 				( int )project.getId(),
 				64,
-				64 );
+				64,
+				false );
 
 		// get calibration and image size
 

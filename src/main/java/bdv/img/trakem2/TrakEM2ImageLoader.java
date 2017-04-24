@@ -75,7 +75,8 @@ public class TrakEM2ImageLoader extends AbstractViewerSetupImgLoader< ARGBType, 
 			final int setupId,
 			final int tileWidth,
 			final int tileHeight,
-			final int numScales )
+			final int numScales,
+			final boolean averageSlices )
 	{
 		super( new ARGBType(), new VolatileARGBType() );
 
@@ -103,7 +104,7 @@ public class TrakEM2ImageLoader extends AbstractViewerSetupImgLoader< ARGBType, 
 		for ( int l = 0; l < numScales; ++l )
 		{
 			final int sixy = 1 << l;
-			final int siz = Math.max( 1, ( int )Math.round( sixy / zScale ) );
+			final int siz = averageSlices ? Math.max( 1, ( int )Math.round( sixy / zScale ) ) : 1;
 
 			mipmapResolutions[ l ] = new double[] { sixy, sixy, siz };
 			imageDimensions[ l ] = new long[] { width >> l, height >> l, depth / siz };
@@ -132,7 +133,8 @@ public class TrakEM2ImageLoader extends AbstractViewerSetupImgLoader< ARGBType, 
 			final LayerSet layerset,
 			final int setupId,
 			final int tileWidth,
-			final int tileHeight )
+			final int tileHeight,
+			final boolean averageSlices )
 	{
 		this(
 				project,
@@ -144,7 +146,8 @@ public class TrakEM2ImageLoader extends AbstractViewerSetupImgLoader< ARGBType, 
 						( long )Math.ceil( layerset.get2DBounds().getWidth() ),
 						( long )Math.ceil( layerset.get2DBounds().getHeight() ),
 						tileWidth,
-						tileHeight ) );
+						tileHeight ),
+				averageSlices );
 	}
 
 	@Override

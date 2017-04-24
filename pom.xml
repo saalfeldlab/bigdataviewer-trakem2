@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>sc.fiji</groupId>
 		<artifactId>pom-bigdataviewer</artifactId>
-		<version>3.2.0</version>
+		<version>3.3.0-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>bigdataviewer_trakem2</artifactId>
@@ -16,33 +16,25 @@
 	<name>BigDataViewer TrakEM2</name>
 	<description>BigDataViewer bindings and viewer plugin for TrakEM2 projects</description>
 	
-	<properties>
-		<enforcer.skip>true</enforcer.skip>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>sc.fiji</groupId>
 			<artifactId>bigdataviewer-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>sc.fiji</groupId>
-			<artifactId>bigdataviewer_fiji</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>net.imagej</groupId>
 			<artifactId>imagej-common</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>net.imagej</groupId>
-			<artifactId>imagej-deprecated</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>sc.fiji</groupId>
 			<artifactId>TrakEM2_</artifactId>
-			<version>1.0h-SNAPSHOT</version>
+			<version>1.0h</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>sc.fiji</groupId>
+			<artifactId>bigdataviewer_fiji</artifactId>
+		</dependency>
 	</dependencies>
 
 	<repositories>

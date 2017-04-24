@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.image.PixelGrabber;
+import java.util.Arrays;
 
 import bdv.img.cache.CacheArrayLoader;
 import ij.ImagePlus;
@@ -120,7 +121,7 @@ public class TrakEM2VolatileIntArrayLoader implements CacheArrayLoader< Volatile
 				pg.grabPixels();
 			}
 
-//			System.out.println( "success loading r=" + entry.key.r + " c=" + entry.key.c + " url(" + urlString + ")" );
+			System.out.println("level = " + level + ", min = " + Arrays.toString(min) + " ");
 
 		}
 		catch ( final Exception e )
